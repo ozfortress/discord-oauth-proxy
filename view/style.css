@@ -1,6 +1,51 @@
+:root {
+    /* Color Palette */
+    --primary-color: #4ecdc4;
+    --primary-dark: #44a08d;
+    --background-start: #1a2332;
+    --background-middle: #2a3441;
+    --background-end: #1a2332;
+    --container-background: rgba(42, 52, 65, 0.95);
+    --text-primary: #ffffff;
+    --text-secondary: #b8c5d1;
+    --error-background: rgba(220, 53, 69, 0.15);
+    --error-border: #dc3545;
+    --error-text: #ff6b7a;
+
+    /* Spacing */
+    --container-padding: 2rem;
+    --container-max-width: 400px;
+    --container-width: 90%;
+    --logo-size: 100px;
+    --border-radius: 15px;
+    --border-radius-small: 8px;
+
+    /* Shadows and Effects */
+    --primary-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    --primary-glow: 0 0 20px rgba(78, 205, 196, 0.1);
+    --logo-glow: 0 0 15px rgba(78, 205, 196, 0.3);
+    --button-shadow: 0 4px 15px rgba(78, 205, 196, 0.3);
+    --button-shadow-hover: 0 6px 20px rgba(78, 205, 196, 0.4);
+    --text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+    /* Typography */
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-size-base: 14px;
+    --font-size-large: 16px;
+    --font-weight-normal: 400;
+    --font-weight-semi-bold: 600;
+    --font-weight-bold: 700;
+    --line-height: 1.6;
+    --letter-spacing: 1px;
+
+    /* Borders */
+    --border-width: 2px;
+    --border-width-thin: 1px;
+}
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: linear-gradient(135deg, #1a2332 0%, #2a3441 50%, #1a2332 100%);
+    font-family: var(--font-family);
+    background: linear-gradient(135deg, var(--background-start) 0%, var(--background-middle) 50%, var(--background-end) 100%);
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -10,25 +55,25 @@ body {
 }
 
 .login-container {
-    background: rgba(42, 52, 65, 0.95);
-    border: 2px solid #4ecdc4;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 20px rgba(78, 205, 196, 0.1);
+    background: var(--container-background);
+    border: var(--border-width) solid var(--primary-color);
+    padding: var(--container-padding);
+    border-radius: var(--border-radius);
+    box-shadow: var(--primary-shadow), var(--primary-glow);
     text-align: center;
-    max-width: 400px;
-    width: 90%;
+    max-width: var(--container-max-width);
+    width: var(--container-width);
     backdrop-filter: blur(10px);
 }
 
 .logo {
-    width: 100px;
-    height: 100px;
+    width: var(--logo-size);
+    height: var(--logo-size);
     margin: 0 auto 1.5rem;
-    border-radius: 15px;
+    border-radius: var(--border-radius);
     overflow: hidden;
-    border: 2px solid #4ecdc4;
-    box-shadow: 0 0 15px rgba(78, 205, 196, 0.3);
+    border: var(--border-width) solid var(--primary-color);
+    box-shadow: var(--logo-glow);
 }
 
 .logo img {
@@ -38,50 +83,82 @@ body {
 }
 
 .error-notice {
-    background: rgba(220, 53, 69, 0.15);
-    border: 1px solid #dc3545;
-    color: #ff6b7a;
+    background: var(--error-background);
+    border: var(--border-width-thin) solid var(--error-border);
+    color: var(--error-text);
     padding: 12px;
-    border-radius: 8px;
+    border-radius: var(--border-radius-small);
     margin-bottom: 1.5rem;
-    font-size: 14px;
-    line-height: 1.4;
+    font-size: var(--font-size-base);
+    line-height: var(--line-height);
     backdrop-filter: blur(5px);
 }
 
 .login-btn {
-    background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
-    color: white;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: var(--text-primary);
     padding: 14px 28px;
     border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 600;
+    border-radius: var(--border-radius-small);
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-semi-bold);
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(78, 205, 196, 0.3);
+    box-shadow: var(--button-shadow);
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: var(--letter-spacing);
 }
 
 .login-btn:hover {
-    background: linear-gradient(135deg, #44a08d 0%, #4ecdc4 100%);
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(78, 205, 196, 0.4);
+    box-shadow: var(--button-shadow-hover);
 }
 
 h1 {
-    color: #ffffff;
+    color: var(--text-primary);
     margin-bottom: 1rem;
-    font-weight: 700;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: var(--font-weight-bold);
+    text-shadow: var(--text-shadow);
 }
 
 p {
-    color: #b8c5d1;
+    color: var(--text-secondary);
     margin-bottom: 2rem;
-    line-height: 1.6;
-    font-size: 14px;
+    line-height: var(--line-height);
+    font-size: var(--font-size-base);
 }
+
+/* Theme Customization Examples */
+/*
+  To customize the theme, simply override the CSS variables in :root
+
+  Example - Dark Red Theme:
+  :root {
+    --primary-color: #dc3545;
+    --primary-dark: #c82333;
+    --background-start: #2d1b1b;
+    --background-middle: #3d2b2b;
+    --background-end: #2d1b1b;
+  }
+
+  Example - Purple Theme:
+  :root {
+    --primary-color: #6f42c1;
+    --primary-dark: #5a359a;
+    --background-start: #2d1b3d;
+    --background-middle: #3d2b4d;
+    --background-end: #2d1b3d;
+  }
+
+  Example - Green Theme:
+  :root {
+    --primary-color: #28a745;
+    --primary-dark: #218838;
+    --background-start: #1b2d1b;
+    --background-middle: #2b3d2b;
+    --background-end: #1b2d1b;
+  }
+*/
