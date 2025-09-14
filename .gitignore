@@ -1,0 +1,77 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables (keep .env.example)
+.env
+
+# Logs
+*.log
+logs/
+.pm2/
+
+# Session storage
+sessions/
+failed_attempts.json
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# ESLint cache
+.eslintcache
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# Environment files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# OS generated files
+.DS_Store?
+ehthumbs.db
+Icon?
+
+# Custom domain-specific nginx configs (keep nginx.conf example)
+alfred.rsl.tf
+*.domain.conf
+
+# Deployment scripts (project-specific)
+deploy.sh
+start*.sh
+start*.bat
+
+# PM2 ecosystem file (if you want to keep it private)
+# ecosystem.config.js
